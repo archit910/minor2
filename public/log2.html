@@ -15,7 +15,19 @@
 		<link rel="stylesheet" href="css/form-elements.css">
         <link rel="stylesheet" href="css/style.css">
 
-       
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons 
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">-->
 
     </head>
 
@@ -29,57 +41,36 @@
                         <div class="col-sm-6 form-box">
                             <div class="form-top">
                                 <div class="form-top-left">
-                                    <h3>Sign Up Now</h3>
-                                    <p>Fill in the form below to get instant access:</p>
+                                    <h3>Sign In</h3>
+                                    <p>Sign in to get all access</p>
                                 </div>
                                 <div class="form-top-right">
                                     <i class="fa fa-pencil"></i>
                                 </div>
                             </div>
                             <div class="form-bottom">
-                                <form role="form" action = "/welcome" method = "POST" class="registration-form">
+                                <form role="form" action="/session" method="POST" class="registration-form">
                                     <div class="form-group">
-                                        <label class="sr-only" for="form-first-name">Name</label>
-                                        <input type="text" name="userName" placeholder="Name..." class="form-first-name form-control" id="form-first-name">
+                                        <label class="sr-only" for="form-email">Email</label>
+                                        <input type="text" name="userName" placeholder="Username" class="form-email form-control" id="form-email">
                                     </div>
-
                                     <div class="form-group">
-                                        <label class="sr-only" for="form-first-name">userName</label>
-                                        <input type="text" name="userUserName" placeholder="UserName..." class="form-first-name form-control" id="form-first-name">
+                                        <label class="sr-only" for="form-password">Password</label>
+                                        <input type="text" name="form-password" placeholder="Password" 
+                                                    class="form-password form-control" id="form-password "></input>
                                     </div>
-                            
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-email">Age</label>
-                                        <input type="number" name="userAge" placeholder="Age" class="form-email form-control" id="form-email">
-                                    </div>
-
-
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-email">Nation</label>
-                                        <input type="text" name="userNation" placeholder="Nation" class="form-email form-control" id="form-email">
-                                    </div>
-                                     <div class="form-group">
-                                        <label class="sr-only" for="form-email">Password</label>
-                                        <input type="text" name="userPassword" placeholder="Password" class="form-email form-control" id="form-email">
-                                    </div>
-                                                                  
-                                    <button type="submit" class="btn" value = 'Click To SignUp'>Sign me up!</button>
+                                    <button type="submit" class="btn">Sign In</button>
                                 </form>
-
-                                <form action = '/allusers' method = "POST">
-                                <br>
-                                    <button type = 'submit' class="btn" value = "Click to see all users">See All Users</button>
-                                </form>
-
+                                <p>Forget password <a href="#">Click Here</a></p>
                             </div>
                         </div>
                         <div class="col-sm-6 text">
                             <ul class="nav navbar-nav navbar-right">
                         <li>
                             <h4>
-                                Already have an account
+                                Haven't account yet.
                             </h4>
-                            <a href="log2.html">login here</a> 
+                            <a href="index.html">Register here</a> 
                             <h4>
                                 or register with: 
                             </h4> 

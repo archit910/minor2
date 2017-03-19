@@ -20,8 +20,10 @@ app.use(upload.array()); // for parsing multipart/form-data
 var index = require('./routes/index');
 // var index2 = require('./routes/index2');
 
-
+var login = require('./routes/login');
 
 app.use('/',index);
+app.use('/',login);
 
 app.listen(8000);
+console.log('Server Running at localhost:8000');
