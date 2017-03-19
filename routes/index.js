@@ -20,6 +20,8 @@ var userSchema = mongoose.Schema({
 	username : String,
 });
 var User = mongoose.model("User" , userSchema);
+
+
 router.post('/welcome' , function(req , res){
 	var myUser = req.body;
 	// res.send("Added");
@@ -37,11 +39,25 @@ router.post('/welcome' , function(req , res){
 	res.render('show_message.html' , {msg : "Thankyou Mr / Mrs " + myUser.userName + " For Sigining Up " + "You user name will be " + myUser.userUserName})
 });
 router.post('/allusers' , function(req , res){
+	//User.findOneAndRemove({name: "yASH"});
+	// var query = User.remove({name: "Ganjedi"});
+	// query.exec(function(err , user){
+	// 	if(err){
+	// 		console.log("ERROR");
+	// 	}
+	// 	else
+	// 	console.log('%s' , user.name);
+		
+	// })
 	User.find(function(err , response){
 		res.json(response);
 	})
 });
 router.get('/alljson' , function(req , res){
+// 	User.remove(function(err,removed) {
+
+//    // where removed is the count of removed documents
+// });
 	User.find(function(err , response){
 		res.json(response);
 	});
