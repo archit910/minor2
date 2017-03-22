@@ -25,10 +25,13 @@ var login = require('./routes/login');
 var home = require('./routes/home');
 
 var movie_queries = require('./routes/movie_queries');
+
+var personal_movie = require('./routes/personalMovie');
 app.use('/',index);
 app.use('/',login);
 app.use('/',home);
 app.use('/'  ,movie_queries);
+app.use('/' , personal_movie);
 
 
 app.listen(8000);

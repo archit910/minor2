@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+
+<title>MovieAlochak</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+</head>
+<h1>
+<script type="text/javascript">
+document.write()
+	
+	var json_data = <%- JSON.stringify(somevar) %>
+	
+
+	var j_data = JSON.parse(json_data);
+	var mType = document.getElementById('ok1').innerHTML;
+	function writeData(i){
+		//console.log('aman');
+		//var mType = document.getElementById('ok1').innerHTML;
+		if(i == 9)
+		{
+
+		}
+		var msg = j_data[i].movie_title;
+		//var msg = mType;
+
+		return msg;
+	}/*
+	for (var i = 0; i < 10; i++) {
+		document.write('ok');
+		document.getElementById('id1').innerHTML = j_data[i].movie_title;
+	//ocument.write(j_data[i].movie_title);
+		document.write('<br>')
+	}*/
+	function bgChange(){
+	var mType = (document.getElementById('ok1').innerHTML).toString();
+	var toCheckComedy= ("Comedy").toString();
+	var toCheckHorror = ("Horror").toString();
+	var toCheckAction = ("Action").toString();
+	var toCheckScifi = ("Sci-fi").toString();
+	mType = mType.replace(/\s+/g,' ').trim();
+
+	toCheckComedy = toCheckComedy.replace(/\s+/g,' ').trim();
+	toCheckHorror = toCheckHorror.replace(/\s+/g,' ').trim();
+	toCheckScifi = toCheckScifi.replace(/\s+/g,' ').trim();
+	toCheckAction = toCheckAction.replace(/\s+/g,' ').trim();
+
+	if(mType === toCheckComedy)
+	{
+		document.body.background = "comedy.jpg";
+   
+
+	}
+	else if (mType == toCheckAction ){
+		document.body.background = "action.jpg";
+	}
+	else if(mType == toCheckScifi){
+		document.body.background = "scifi.jpg";
+	}
+	else{
+		  document.body.background = "horrow.jpg";
+	}
+	}
+ 
+</script>
+</h1>
+	<title></title>
+</head>
+
+<body >
+<span class="pull-left">
+<h2 id = 'ok1' style="color : yellow">  <%= movieType  %> </h2>
+
+<ol>
+<a style = "color :#cc6699" href="#"><h2 ><li><script>  var i = 0 ;{document.write(writeData(0) + "<br>") ; i++;} </script></li></h2></a>
+
+<a style = "color :#cc6699" href="#"><h2 ><li><script>  var i = 0 ;{document.write(writeData(1) + "<br>") ; i++;} </script></li></h2></a>
+<a style = "color :#cc6699" href="#"><h2 ><li><script>  var i = 0 ;{document.write(writeData(2) + "<br>") ; i++;} </script></li></h2></a>
+<a style = "color :#cc6699" href="#"><h2 ><li><script>  var i = 0 ;{document.write(writeData(3) + "<br>") ; i++;} </script></li></h2></a>
+<a style = "color :#cc6699" href="#"><h2 ><li><script>  var i = 0 ;{document.write(writeData(4) + "<br>") ; i++;} </script></li></h2></a>
+<a style = "color :#cc6699" href="#"><h2 ><li><script>  var i = 0 ;{document.write(writeData(5) + "<br>") ; i++;} </script></li></h2></a>
+<a style = "color :#cc6699" href="#"><h2 ><li><script>  var i = 0 ;{document.write(writeData(6) + "<br>") ; i++;} </script></li></h2></a>
+<a style = "color :#cc6699" href="#"><h2 ><li><script>  var i = 0 ;{document.write(writeData(7) + "<br>") ; i++;} </script></li></h2></a>
+<a style = "color :#cc6699" href="#"><h2 ><li><script>  var i = 0 ;{document.write(writeData(8) + "<br>") ; i++;} </script></li></h2></a>
+<a style = "color :#cc6699" href="#"><h2 style = "padding: 11px"><li><script>  var i = 0 ;{document.write(writeData(9) + "<br>") ; i++;} </script></li></h2></a>
+
+</ol>
+<script> bgChange()</script>
+
+
+
+</span>
+</body>
+</html>

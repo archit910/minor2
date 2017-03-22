@@ -42,7 +42,7 @@ var movie = mongoose.model('movies' , movieSchema);
 
 router.get('/horror' , function(req , res ){
 		var input = 'Horror'
-		movie.find({genres : new RegExp(input , "i" )} ,function(err , docs){
+		movie.find({genres : new RegExp(input , "i" )}).sort({imdb_score : -1}).exec(function(err , docs){
 			if(err){
 				console.log('EROR bro')
 			}
@@ -50,13 +50,12 @@ router.get('/horror' , function(req , res ){
 				var i ;
 				for(i = 0 ; i < docs.length ; i ++ ){
 
-					console.log(docs[i].movie_title);
+				//	console.log(docs[i].imdb_score);
 				}
-				res.render('jsonrender' , {somevar : JSON.stringify(docs)});
+				res.render('jsonrend.html' , {somevar : JSON.stringify(docs) , movieType : input});
 
 			}
 		});
-		
 
 			
 			
@@ -65,7 +64,7 @@ router.get('/horror' , function(req , res ){
 /******/
 router.get('/movie_page' , function(req , res ){
 		var input = req.body.name;
-		movie.find({genres : new RegExp(input , "i" )} ,function(err , docs){
+		movie.find({genres : new RegExp(input , "i" )}).sort({imdb_score : -1}).exec(function(err , docs){
 			if(err){
 				console.log('EROR bro')
 			}
@@ -73,9 +72,9 @@ router.get('/movie_page' , function(req , res ){
 				var i ;
 				for(i = 0 ; i < docs.length ; i ++ ){
 
-					console.log(docs[i].movie_title);
+				//	console.log(docs[i].imdb_score);
 				}
-				res.render('jsonrender' , {somevar : JSON.stringify(docs)});
+				res.render('jsonrend.html' , {somevar : JSON.stringify(docs) , movieType : input});
 
 			}
 		});
@@ -85,8 +84,8 @@ router.get('/movie_page' , function(req , res ){
 			
 		});
 router.get('/action' , function(req , res ){
-		var input = 'acTion'
-		movie.find({genres : new RegExp(input , "i" )} ,function(err , docs){
+		var input = 'Action'
+		movie.find({genres : new RegExp(input , "i" )}).sort({imdb_score : -1}).exec(function(err , docs){
 			if(err){
 				console.log('EROR bro')
 			}
@@ -94,13 +93,12 @@ router.get('/action' , function(req , res ){
 				var i ;
 				for(i = 0 ; i < docs.length ; i ++ ){
 
-					console.log(docs[i].movie_title);
+				//	console.log(docs[i].imdb_score);
 				}
-				res.render('jsonrender' , {somevar : JSON.stringify(docs)});
+				res.render('jsonrend.html' , {somevar : JSON.stringify(docs) , movieType : input});
 
 			}
 		});
-		
 
 			
 			
@@ -108,7 +106,7 @@ router.get('/action' , function(req , res ){
 /*****/
 router.get('/SciFi' , function(req , res ){
 		var input = 'Sci-fi'
-		movie.find({genres : new RegExp(input , "i" )} ,function(err , docs){
+		movie.find({genres : new RegExp(input , "i" )}).sort({imdb_score : -1}).exec(function(err , docs){
 			if(err){
 				console.log('EROR bro')
 			}
@@ -116,9 +114,9 @@ router.get('/SciFi' , function(req , res ){
 				var i ;
 				for(i = 0 ; i < docs.length ; i ++ ){
 
-					console.log(docs[i].movie_title);
+				//	console.log(docs[i].imdb_score);
 				}
-				res.render('jsonrender' , {somevar : JSON.stringify(docs)});
+				res.render('jsonrend.html' , {somevar : JSON.stringify(docs) , movieType : input});
 
 			}
 		});
@@ -132,7 +130,7 @@ router.get('/SciFi' , function(req , res ){
 
 router.get('/comedy' , function(req , res ){
 		var input = 'Comedy'
-		movie.find({genres : new RegExp(input , "i" )} ,function(err , docs){
+		movie.find({genres : new RegExp(input , "i" )}).sort({imdb_score : -1}).exec(function(err , docs){
 			if(err){
 				console.log('EROR bro')
 			}
@@ -140,18 +138,19 @@ router.get('/comedy' , function(req , res ){
 				var i ;
 				for(i = 0 ; i < docs.length ; i ++ ){
 
-					console.log(docs[i].movie_title);
+				//	console.log(docs[i].imdb_score);
 				}
-				res.render('jsonrender' , {somevar : JSON.stringify(docs)});
+				res.render('jsonrend.html' , {somevar : JSON.stringify(docs) , movieType : input});
 
 			}
 		});
-		
-
 			
 			
 		});
 	
+
+/******** NOW THERE ARE QUERIES TO FETCH DATA **********/
+
 
 
 
