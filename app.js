@@ -22,8 +22,14 @@ var index = require('./routes/index');
 
 var login = require('./routes/login');
 
+var home = require('./routes/home');
+
+var movie_queries = require('./routes/movie_queries');
 app.use('/',index);
 app.use('/',login);
+app.use('/',home);
+app.use('/'  ,movie_queries);
+
 
 app.listen(8000);
 console.log('Server Running at localhost:8000');

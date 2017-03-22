@@ -4,7 +4,8 @@ var path = require('path');
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/minor_db');
-
+// var home = require('home');
+// router.use('/home' , home);
 // router.get('/login' , function(req , res , next){
 // 	res.render('log2.html');
 // });
@@ -32,6 +33,7 @@ router.post('/welcome' , function(req , res){
 		country : myUser.userNation,
 		password :myUser.userPassword,
 		username :myUser.userUserName,
+		//\\\\\\\\\\\
 	});
 	newUser.save(function(req , res){
 
