@@ -27,11 +27,17 @@ var home = require('./routes/home');
 var movie_queries = require('./routes/movie_queries');
 
 var personal_movie = require('./routes/personalMovie');
+
+var update_movies = require('./routes/update_movies');
 app.use('/',index);
 app.use('/',login);
 app.use('/',home);
 app.use('/'  ,movie_queries);
 app.use('/' , personal_movie);
+app.use('/' , update_movies);
+app.get('*', function(req , res){
+	res.send("ERROR 404 FILE NOT FOUND");
+})
 
 
 app.listen(8000);

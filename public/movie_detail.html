@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+	function change_value(){
+		var fac = document.getElementById('mvn').innerHTML;
+
+		fac = fac.toString();
+		return fac ;
+		
+	}
+	
+</script>
+	<title></title>
+</head>
+<body>
+<p id = 'mvn'><%=movName%> </p>
+<br>
+<p> Director Name: <%= dirName %> </p>
+<br>
+<p> Actor Name: <%= actorOne %> </p>
+<br>
+<p> Country Name: <%= movCountry %> </p>
+<br>
+<p> Year of Release: <%= movYear %> </p>
+<br>
+<p> Language of Release : <%= movLanguage %> </p>
+<br>
+<p> Imdb Score : <%= imdbScore %> </p>
+<br>
+<p> Reviewed By : <%= movRev %> </p>
+
+<form action = '/movieupdate' method = "POST" >
+<input style = " color : aqua ; font-size : 20px" type = 'Number' name = 'Rating' min = '0' max = '10' >
+<input type = 'text' style = "font-size: 0px" id = 'movie_name' name = 'mname' value = "ch()">
+<script type="text/javascript"> 
+  document.getElementById("movie_name").setAttribute('value',change_value());
+</script>
+
+<input type = 'Submit' value = "Click Here to Rate!!" >
+</form>
+
+
+
+</body>
+</html>
