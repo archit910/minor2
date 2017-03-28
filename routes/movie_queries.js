@@ -7,7 +7,7 @@ mongoose.createConnection('mongodb://localhost/minor_db');
 
 
 var movieSchema = mongoose.Schema({
-		color : String,
+	color : String,
 	director_name : String,
 	num_critic_for_reviews : Number,
 	duration : Number,
@@ -150,7 +150,31 @@ router.get('/comedy' , function(req , res ){
 	
 
 /******** NOW THERE ARE QUERIES TO FETCH DATA **********/
+router.post('/findMovie' , function(req , res){
+	//res.send("Search");
+	String.prototype.trimRight=function(){return this.replace(/\s+$/,'');}
+	var input = String((req.body.searchMovie));
+	console.log(input);
+	input = input.trimRight();
+	console.log(input);
+	movie.find({movie_title : new RegExp(input , "i" )}).sort({imdb_score : -1}).exec(function(err , docs){
+			if(err){
+				console.log('EROR bro')
+			}
+			else{
+				//console.log(docs.length)
+				var i ;
+				for(i = 0 ; i < docs.length && i < 10 ; i ++ ){
 
+					console.log(docs[i].movie_title);
+				}
+				res.render('jsonrend.html' , {somevar : JSON.stringify(docs) , movieType : "Search Results for " + input});
+
+			}
+		});
+
+
+});
 
 
 

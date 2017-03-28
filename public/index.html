@@ -12,14 +12,37 @@
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-		<link rel="stylesheet" href="css/form-elements.css">
+        <link rel="stylesheet" href="css/form-elements.css">
         <link rel="stylesheet" href="css/style.css">
-
+        <link rel="stylesheet" href="css/style2.css">
        
 
     </head>
 
     <body >
+
+        <!-- nav bar-->
+        <div class="navbar-wrapper">
+          <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+              <div class="container">   
+                <h1 class="brand"><a href="http://localhost:8000/home">MovieAlochak</a></h1>
+                <nav class="pull-right nav-collapse collapse">
+                  <ul id="menu-main" class="nav">
+                    <li><a title="services" href="#services">Movies</a></li>
+                    <li><a title="news" href="#news">News</a></li>
+                    <li><a title="team" href="#team">Find Movie</a></li>
+                    <li><a title="contact" href="#contact">Contact</a></li>
+                    <li><a title="contact" href="http://localhost:8000/login">Login</a></li>
+                    <li><a title="contact" href="http://localhost:8000/">SignUp</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
         <h3>Welcome to MovieAlochak.com</h3>
         <!-- Top content -->
         <div class="top-content">
@@ -27,15 +50,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-6 form-box">
-                            <div class="form-top">
-                                <div class="form-top-left">
-                                    <h3>Sign Up Now</h3>
-                                    <p>Fill in the form below to get instant access:</p>
-                                </div>
-                                <div class="form-top-right">
-                                    <i class="fa fa-pencil"></i>
-                                </div>
-                            </div>
+                            
                             <div class="form-bottom">
                                 <form role="form" action = "/welcome" method = "POST" class="registration-form">
                                     <div class="form-group">
@@ -65,9 +80,9 @@
                                                                   
                                     <button type="submit" class="btn" value = 'Click To SignUp'>Sign me up!</button>
                                 </form>
-
-                                <form action = '/allusers' method = "POST">
                                 <br>
+                                <form action = '/allusers' method = "POST">
+                                
                                     <button type = 'submit' class="btn" value = "Click to see all users">See All Users</button>
                                 </form>
 
@@ -75,21 +90,15 @@
                         </div>
                         <div class="col-sm-6 text">
                             <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <h4>
+                                <li>
+                            <h4 style="color: black ; font-size:30px">
                                 Already have an account
-                            </h4>
+                            </h4> <br>
                             <a href="log2.html">login here</a> 
-                            <h4>
+                            <h4 style="color: black ; font-size:30px">
                                 or register with: 
                             </h4> 
                             <br/>
-                            <span class="li-social icon" >
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-envelope"></i></a> 
-                                <a href="#"><i class="fa fa-skype"></i></a>
-                            </span>
                         </li>
                     </ul>
                         </div>     

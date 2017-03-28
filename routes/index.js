@@ -38,9 +38,9 @@ router.post('/welcome' , function(req , res){
 	newUser.save(function(req , res){
 
 	});
-	res.render('show_message.html' , {msg : "Thankyou Mr / Mrs " + myUser.userName + " For Sigining Up " + "You user name will be " + myUser.userUserName})
+	res.render('show_message.html' , {msg : "Thankyou Mr / Mrs " + myUser.userName + " For Sigining Up " + "Your user name will be " + myUser.userUserName})
 });
-router.post('/allusers' , function(req , res){
+	router.post('/allusers' , function(req , res){
 	//User.findOneAndRemove({name: "yASH"});
 	// var query = User.remove({name: "Ganjedi"});
 	// query.exec(function(err , user){

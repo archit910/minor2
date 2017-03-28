@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style2.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
 <head>
 <script type="text/javascript">
 	function change_value(){
@@ -9,13 +12,59 @@
 		return fac ;
 		
 	}
+	function change_bg(){
+		var mType = change_value();
+		var toCheckAlien= ("Alien").toString();
+		mType = mType.replace(/\s+/g,' ').trim();
+
+		//mType = mType.replace(/\s+/g,' ').trim();
+	//	mType = mType.replace(/\s+/g,' ').trim();
+		//mType = mType.replace(/\s+/g,' ').trim();
+
+
+		 if(mType === "Alien")
+			return 'Alien.jpg';
+		 else if(mType === "The Dark Knight")
+		{
+			return 'Dark.jpg'
+		}
+		 else if(mType === "Inception")
+		 	return 'Inception.jpg'
+		else return 'Honey.jpg'
+	}
 	
 </script>
 	<title></title>
 </head>
-<body>
-<p id = 'mvn'><%=movName%> </p>
+<body style="background-color:aqua">
+<!-- nav bar-->
+<div class="navbar-wrapper">
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">   
+        <h1 class="brand"><a href="http://localhost:8000/home">MovieAlochak</a></h1>
+        <nav class="pull-right nav-collapse collapse">
+          <ul id="menu-main" class="nav">
+            <li><a title="services" href="#services">Movies</a></li>
+            <li><a title="news" href="#news">News</a></li>
+            <li><a title="team" href="#team">Find Movie</a></li>
+            <li><a title="contact" href="#contact">Contact</a></li>
+            <li><a title="contact" href="http://localhost:8000/login">Login</a></li>
+            <li><a title="contact" href="http://localhost:8000/">SignUp</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br><br>
+
+<h2 style="text-align:center; font-size:50px" id = 'mvn'><%=movName%> </h2>
 <br>
+<img style="float: right; height: 400px;width: 500px" id = 'img1' alt=""/>
+<script type="text/javascript"> 
+  document.getElementById("img1").setAttribute('src',change_bg());
+</script>
 <p> Director Name: <%= dirName %> </p>
 <br>
 <p> Actor Name: <%= actorOne %> </p>
@@ -24,20 +73,24 @@
 <br>
 <p> Year of Release: <%= movYear %> </p>
 <br>
+
 <p> Language of Release : <%= movLanguage %> </p>
 <br>
+<p>Give a rating:<form action = '/movieupdate' method = "POST" >
 <p> Imdb Score : <%= imdbScore %> </p>
 <br>
 <p> Reviewed By : <%= movRev %> </p>
+<br>
 
-<form action = '/movieupdate' method = "POST" >
+<div>
+
 <input style = " color : aqua ; font-size : 20px" type = 'Number' name = 'Rating' min = '0' max = '10' >
-<input type = 'text' style = "font-size: 0px" id = 'movie_name' name = 'mname' value = "ch()">
+<input type = 'text' style = "font-size: 0px ; color:aqua" id = 'movie_name' name = 'mname' value = "ch()">
 <script type="text/javascript"> 
   document.getElementById("movie_name").setAttribute('value',change_value());
 </script>
 
-<input type = 'Submit' value = "Click Here to Rate!!" >
+<input style="color:red" type = 'Submit' value = "Click Here to Rate!!" >
 </form>
 
 
