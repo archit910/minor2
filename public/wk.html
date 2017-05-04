@@ -7,22 +7,23 @@
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/style2.css" rel="stylesheet">
 <link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link rel="stylesheet" href="https://c...content-available-to-author-only...e.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
+ 
 <body>
-
+ 
 <!-- nav bar-->
 <div class="navbar-wrapper">
   <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">   
-        <h1 class="brand"><a href="#top">MovieAlochak</a></h1>
+        <h1 class="brand"><a href="#contact">MovieAlochak</a></h1>
         <nav class="pull-right nav-collapse collapse">
           <ul id="menu-main" class="nav">
-            <li><a title="services" href="#services">Movies</a></li>
+            <li><a title="team" href="#contact">Find Movie</a></li>
+            <li><a title="services" href="#services">Top Movies</a></li>
             <li><a title="news" href="#news">News</a></li>
-            <li><a title="team" href="#team">Find Movie</a></li>
-            <li><a title="contact" href="#contact">Contact</a></li>
+            <li><a title="team" href="#team">Contact</a></li>
             <li><a title="contact" href="http://localhost:8000/login">Login</a></li>
             <li><a title="contact" href="http://localhost:8000/">SignUp</a></li>
           </ul>
@@ -31,11 +32,33 @@
     </div>
   </div>
 </div>
-
+ 
+ 
+ 
+ 
+ 
+<section id="contact">
+<div id="top"></div>
 <div id="headerwrap">
+  <header class="clearfix">
+      <div class="container">
+      <div class="row">
+        <div class="span12">
+         <div class="container">
+            <form action = "/findMovie" method = "POST">
+            <input type = 'text' name = 'searchMovie'>
+            <input type="submit" value = 'Click To Search'>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 </div>
-
-<section id="services" class="single-page scrollblock">
+</section>
+ 
+ 
+<section id="services" class="single-page scrollblock" style="background-color:#D3D3D3">
   <div class="container">
     <div class="align"></div>
     <h1>Movies</h1>
@@ -48,33 +71,83 @@
     </div>
   </div>
 </section>
-
-<section id="team">
-<div id="top"></div>
-<div id="headerwrap">
-  <header class="clearfix">
-  
-    <div class="container">
-      <div class="row">
-        <div class="span12">
-         <div class="container">
-    <form action = "/findMovie" method = "POST">
-    <input type = 'text' name = 'searchMovie'>
-    <input type="submit" value = 'Click To Search'>
-    </form>
-  </div>
-         
-         
-          <!-- <input type="submit" value="Notify me" class="cform-submit"> -->
+ 
+ 
+<!-- news-->
+<section id="news" class="single-page scrollblock">
+  <div class="container">
+    <h1>News & Blog</h1>
+    <div class="row">
+      <article class="span4 post"> <img class="img-news" src="img/blog_img-01.jpg" alt="">
+        <div class="inside">
+          <p class="post-date"><i class="icon-calendar"></i> March 17, 2013</p>
+          <h2>A girl running on a road</h2>
+          <div class="entry-content">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. &hellip;</p>
+            <a href="#" class="more-link">read more</a> </div>
         </div>
-      </div>
- 
+      </article>
+      <article class="span4 post"> <img class="img-news" src="img/blog_img-02.jpg" alt="">
+        <div class="inside">
+          <p class="post-date">February 28, 2013</p>
+          <h2>A bear sleeping on a tree</h2>
+          <div class="entry-content">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. &hellip;</p>
+            <a href="#" class="more-link">read more</a> </div>
+        </div>
+      </article>
+      <article class="span4 post"> <img class="img-news" src="img/blog_img-03.jpg" alt="">
+        <div class="inside">
+          <p class="post-date">February 06, 2013</p>
+          <h2>A Panda playing with his baby</h2>
+          <div class="entry-content">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. &hellip;</p>
+            <a href="#" class="more-link">read more</a> </div>
+        </div>
+      </article>
     </div>
-  </header>
-</div>
- 
-
+    <a href="#" class="btn btn-large">Go to our blog</a> </div>
 </section>
-
+ 
+ 
+<!-- contact -->
+ 
+<section id="team" class="single-page scrollblock">
+  <div class="container">
+    <div class="align"><i class="icon-group-circled"></i></div>
+    <h1>Meet the team</h1>
+    <div class="row"> 
+      <div class="span3 offset1">
+        <div class="teamalign"><a href="https://w...content-available-to-author-only...k.com/profile.php?id=100005733829183&fref=ts" target="_"/> <img class="img-circle" src="img/aman.jpg" alt=""> </div>
+        <h3 >Aman</h3>
+        <div class="job-position"></div>
+      </div>
+      <div class="span3">
+        <div class="teamalign"><a href="https://w...content-available-to-author-only...k.com/archit910?fref=ts" target="_"/> <img class="img-circle" src="img/archit.jpg" alt=""> </div>
+        <h3 >Archit</h3>
+        <div class="job-position"></div>
+      </div>
+      <div class="span3">
+        <div class="teamalign"><a href="https://w...content-available-to-author-only...k.com/jagendra.singh.925" target="_"/> <img class="img-circle" src="img/jaggy.jpg" alt=""> </div>
+        <h3>Jagendra</h3>
+        <div class="job-position"></div>
+      </div>
+    </div>
+    <div>
+          <ul class="icon ">
+            <li><a href="https://accounts.google.com/AddSession?hl=en&continue=https://mail.google.com/mail&service=mail#identifier" target="_"/><h3 class="pull-left">Contact Us: Moviealochak@gmail.com | 83770-59918<h3></li>
+            <li><a href="#"><i class="fa fa-twitter"  style="font-size:70px;color:lightblue;text-shadow:2px 2px 4px #000000;">
+              </i></a></li>
+            <li><a href="#"><i class="fa fa-facebook" style="font-size:70px;color:lightblue;text-shadow:2px 2px 4px #000000;"></i></a></li>
+            <li><a href="#"><i class="fa fa-envelope" style="font-size:70px;color:lightblue;text-shadow:2px 2px 4px #000000;"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram" style="font-size:70px;color:lightblue;text-shadow:2px 2px 4px #000000;"></i></a></li>
+ 
+          </ul>
+        </div>
+ 
+ 
+ 
+ 
+ 
 </body>
 </html>

@@ -1,6 +1,40 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
+<script>
+ var archit = ""
+ var semaphore = 0;
+window.onclick = function(e) { var res = (e.target.innerHTML);
+	
+	if(semaphore == 0){
+	archit = ""
+	var val1 = 0;
+	var val2 = 0;
+	var check = 0;
+	for (var i = res.length - 1; i >= 0; i--) {
+		if(res[i] == '<')
+		{
+			val2 = i;
+			check  = 1;
+		}
+		if(res[i] == '>' && check == 1)
+		{
+			val1 = i;
+			break;
+		}
+		
+	}
+	
+	for(var i = val1 + 1 ; i < val2 ; i++)
+	{
+		archit += res[i];
+	}
+//	alert(archit);
+	document.getElementById('jeetnahai').value = archit; semaphore = 1}
+
+
+};
+ </script>
 
 <title>MovieAlochak</title>
 <meta charset="utf-8">
@@ -11,6 +45,7 @@
 </head>
 <h1>
 <script type="text/javascript">
+
 document.write()
 	
 	var json_data = <%- JSON.stringify(somevar) %>
@@ -27,7 +62,7 @@ document.write()
 		}
 		var msg = j_data[i].movie_title;
 		//var msg = mType;
-
+		document.getElementsByName('movieKaNaam').value = msg;
 		return msg;
 	}/*
 	for (var i = 0; i < 10; i++) {
@@ -70,29 +105,36 @@ document.write()
 </h1>
 	<title></title>
 </head>
+<form action = '/CheckMovie' method = "POST" >
+<input type = 'text' id = 'jeetnahai' name = 'movieKaNaam'>
 
+<button type = 'submit'> Click </button>
+</form>
 <body >
+
 <span class="pull-left">
-<h2 id = 'ok1' style="color : yellow">  <%= movieType  %> </h2>
+<h2 id = 'ok1' name = 'mama' style="color : yellow">  <%= movieType  %> </h2>
 <input type = 'text' style = 'font-size  : 0px'> 
-<ol>
-<a style = "color :#cc6699" href="/mov1" action = 'GET' ><h2 name = 'id1'><li><script>  var i = 0 ;{document.write(writeData(0) + "<br>") ; i++;} </script></li></h2></a>
 
-<a style = "color :#cc6699" href="/mov2" action = 'GET'><h2 ><li><script>  var i = 0 ;{document.write(writeData(1) + "<br>") ; i++;} </script></li></h2></a>
-<a style = "color :#cc6699" href="/mov3" action = 'GET'><h2 ><li><script>  var i = 0 ;{document.write(writeData(2) + "<br>") ; i++;} </script></li></h2></a>
-<a style = "color :#cc6699" href="/mov4" action = 'GET'><h2 ><li><script>  var i = 0 ;{document.write(writeData(3) + "<br>") ; i++;} </script></li></h2></a>
-<a style = "color :#cc6699" href="/mov5" action = 'GET'><h2 ><li><script>  var i = 0 ;{document.write(writeData(4) + "<br>") ; i++;} </script></li></h2></a>
-<a style = "color :#cc6699" href="/mov6" action = 'GET'><h2 ><li><script>  var i = 0 ;{document.write(writeData(5) + "<br>") ; i++;} </script></li></h2></a>
-<a style = "color :#cc6699" href="/mov7" action = 'GET'><h2 ><li><script>  var i = 0 ;{document.write(writeData(6) + "<br>") ; i++;} </script></li></h2></a>
-<a style = "color :#cc6699" href="/mov8" action = 'GET'><h2 ><li><script>  var i = 0 ;{document.write(writeData(7) + "<br>") ; i++;} </script></li></h2></a>
-<a style = "color :#cc6699" href="/mov9" action = 'GET'><h2 ><li><script>  var i = 0 ;{document.write(writeData(8) + "<br>") ; i++;} </script></li></h2></a>
-<a style = "color :#cc6699" href="/mov10" action = 'GET'><h2 style = "padding: 11px"><li><script>  var i = 0 ;{document.write(writeData(9) + "<br>") ; i++;} </script></li></h2></a>
+<a style = "color :#cc6699"  action = 'GET' ><h2 name = 'id1'><li><script>  var i = 0 ;{document.write(writeData(0) + "<br>") ; i++;} </script></li></h2></a>
 
-</ol>
+<a style = "color :#cc6699"  action = 'GET'><h2 ><li><script>  var i = 0 ;{document.write(writeData(1) + "<br>") ; i++;} </script></li></h2></a>
+<a style = "color :#cc6699"  action = 'GET'><h2 ><li><script>  var i = 0 ;{document.write(writeData(2) + "<br>") ; i++;} </script></li></h2></a>
+<a style = "color :#cc6699"  action = 'GET'><h2 ><li><script>  var i = 0 ;{document.write(writeData(3) + "<br>") ; i++;} </script></li></h2></a>
+<a style = "color :#cc6699"  action = 'GET'><h2 ><li><script>  var i = 0 ;{document.write(writeData(4) + "<br>") ; i++;} </script></li></h2></a>
+<a style = "color :#cc6699"  action = 'GET'><h2 ><li><script>  var i = 0 ;{document.write(writeData(5) + "<br>") ; i++;} </script></li></h2></a>
+<a style = "color :#cc6699"  action = 'GET'><h2 ><li><script>  var i = 0 ;{document.write(writeData(6) + "<br>") ; i++;} </script></li></h2></a>
+<a style = "color :#cc6699"  action = 'GET'><h2 ><li><script>  var i = 0 ;{document.write(writeData(7) + "<br>") ; i++;} </script></li></h2></a>
+<a style = "color :#cc6699"  action = 'GET'><h2 ><li><script>  var i = 0 ;{document.write(writeData(8) + "<br>") ; i++;} </script></li></h2></a>
+<a style = "color :#cc6699"  action = 'GET'><h2 style = "padding: 11px"><li><script>  var i = 0 ;{document.write(writeData(9) + "<br>") ; i++;} </script></li></h2></a>
+
+
+
+
 <script> bgChange()</script>
 
-
-
 </span>
+
+
 </body>
 </html>

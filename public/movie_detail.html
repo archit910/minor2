@@ -7,7 +7,6 @@
 <script type="text/javascript">
 	function change_value(){
 		var fac = document.getElementById('mvn').innerHTML;
-
 		fac = fac.toString();
 		return fac ;
 		
@@ -16,12 +15,9 @@
 		var mType = change_value();
 		var toCheckAlien= ("Alien").toString();
 		mType = mType.replace(/\s+/g,' ').trim();
-
 		//mType = mType.replace(/\s+/g,' ').trim();
 	//	mType = mType.replace(/\s+/g,' ').trim();
 		//mType = mType.replace(/\s+/g,' ').trim();
-
-
 		 if(mType === "Alien")
 			return 'Alien.jpg';
 		 else if(mType === "The Dark Knight")
@@ -65,6 +61,8 @@
 <script type="text/javascript"> 
   document.getElementById("img1").setAttribute('src',change_bg());
 </script>
+<p> Positive Review : <%= poss %> </p>
+<p> Negative Review : <%= negg %> </p>
 <p> Director Name: <%= dirName %> </p>
 <br>
 <p> Actor Name: <%= actorOne %> </p>
@@ -76,15 +74,17 @@
 
 <p> Language of Release : <%= movLanguage %> </p>
 <br>
-<p>Give a rating:<form action = '/movieupdate' method = "POST" >
+<form action = '/movieupdate' method = "POST" >
 <p> Imdb Score : <%= imdbScore %> </p>
 <br>
 <p> Reviewed By : <%= movRev %> </p>
 <br>
 
 <div>
-
+<p> Give a rating </p>
 <input style = " color : aqua ; font-size : 20px" type = 'Number' name = 'Rating' min = '0' max = '10' >
+<p> Drop a comment too ! </p>
+<input style = "color : red ; font-size : 20px " type = 'text' name = '_comment' >
 <input type = 'text' style = "font-size: 0px ; color:aqua" id = 'movie_name' name = 'mname' value = "ch()">
 <script type="text/javascript"> 
   document.getElementById("movie_name").setAttribute('value',change_value());

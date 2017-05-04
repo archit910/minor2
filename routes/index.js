@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 var mongoose = require('mongoose');
+var hamming = require('compute-hamming');
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/minor_db');
 // var home = require('home');
@@ -54,6 +55,12 @@ router.post('/welcome' , function(req , res){
 	User.find(function(err , response){
 		res.json(response);
 	})
+});
+	router.get('/lelo' , function(req ,res ){
+		var dist = hamming('Primer' , 'Bctman');
+		//console.log(dist)
+
+	res.send("hamming is " + dist);
 });
 router.get('/alljson' , function(req , res){
 // 	User.remove(function(err,removed) {
